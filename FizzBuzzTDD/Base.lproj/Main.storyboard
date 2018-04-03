@@ -1,24 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-HeavyOblique</string>
+            <string>Avenir-Light</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="FizzBuzzTDD" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yy0-Xa-ILc">
+                                <rect key="frame" x="260" y="611.5" width="99" height="39.5"/>
+                                <accessibility key="accessibilityConfiguration" identifier="playAgainButton"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Play Again">
+                                            <attributes>
+                                                <color key="NSColor" red="0.96470588239999999" green="0.88235294119999996" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="20" name="Avenir-Heavy"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="playAgainButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2p0-3k-rD3"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 / 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4w-x2-Qg2">
+                                <rect key="frame" x="315.5" y="20" width="43.5" height="27.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="20"/>
+                                <color key="textColor" red="0.96470588239999999" green="0.88235294119999996" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mMz-E6-hTU">
+                                <rect key="frame" x="40" y="196" width="295" height="295"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dH0-hH-Vaa">
+                                        <rect key="frame" x="0.0" y="0.0" width="141.5" height="141.5"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="numberButton"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="70"/>
+                                        <state key="normal" title="0" backgroundImage="button_border">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="can-mb-ayp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2T-9Y-vgQ">
+                                        <rect key="frame" x="153" y="0.0" width="141.5" height="141.5"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="fizzButton"/>
+                                        <state key="normal" image="champagne" backgroundImage="button_border">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xv9-fN-RCX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTh-G5-L3G">
+                                        <rect key="frame" x="0.0" y="153" width="141.5" height="141.5"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="buzzButton"/>
+                                        <state key="normal" image="lightning" backgroundImage="button_border">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="55f-Ci-qgB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2P-rr-Ikn">
+                                        <rect key="frame" x="153" y="153" width="141.5" height="141.5"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="fizzBuzzButton"/>
+                                        <state key="normal" image="space" backgroundImage="button_border">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q8B-oi-1lS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="K2P-rr-Ikn" secondAttribute="trailing" constant="0.5" id="4h9-ru-EBB"/>
+                                    <constraint firstItem="dH0-hH-Vaa" firstAttribute="top" secondItem="mMz-E6-hTU" secondAttribute="top" id="CP9-98-LOh"/>
+                                    <constraint firstAttribute="width" secondItem="mMz-E6-hTU" secondAttribute="height" multiplier="1:1" id="Fr2-7d-ABN"/>
+                                    <constraint firstAttribute="trailing" secondItem="K2T-9Y-vgQ" secondAttribute="trailing" constant="0.5" id="JmX-wr-TJd"/>
+                                    <constraint firstItem="K2P-rr-Ikn" firstAttribute="height" secondItem="dH0-hH-Vaa" secondAttribute="height" id="KpL-ql-xbM"/>
+                                    <constraint firstAttribute="bottom" secondItem="K2P-rr-Ikn" secondAttribute="bottom" constant="0.5" id="QCH-da-Nbn"/>
+                                    <constraint firstItem="lTh-G5-L3G" firstAttribute="height" secondItem="dH0-hH-Vaa" secondAttribute="height" id="cgp-3Z-EFm"/>
+                                    <constraint firstItem="K2P-rr-Ikn" firstAttribute="width" secondItem="dH0-hH-Vaa" secondAttribute="width" id="dq6-tU-cVm"/>
+                                    <constraint firstItem="K2T-9Y-vgQ" firstAttribute="top" secondItem="mMz-E6-hTU" secondAttribute="top" id="jmk-4A-KwG"/>
+                                    <constraint firstItem="dH0-hH-Vaa" firstAttribute="leading" secondItem="mMz-E6-hTU" secondAttribute="leading" id="q6S-d4-aFE"/>
+                                    <constraint firstItem="dH0-hH-Vaa" firstAttribute="height" secondItem="mMz-E6-hTU" secondAttribute="height" multiplier="0.48" id="qEJ-T2-FdS"/>
+                                    <constraint firstItem="lTh-G5-L3G" firstAttribute="leading" secondItem="mMz-E6-hTU" secondAttribute="leading" id="rBH-RD-RiT"/>
+                                    <constraint firstItem="K2T-9Y-vgQ" firstAttribute="height" secondItem="dH0-hH-Vaa" secondAttribute="height" id="ryr-yi-O65"/>
+                                    <constraint firstAttribute="bottom" secondItem="lTh-G5-L3G" secondAttribute="bottom" constant="0.5" id="ssg-jd-J6u"/>
+                                    <constraint firstItem="dH0-hH-Vaa" firstAttribute="width" secondItem="mMz-E6-hTU" secondAttribute="width" multiplier="0.48" id="yCY-45-IwK"/>
+                                    <constraint firstItem="K2T-9Y-vgQ" firstAttribute="width" secondItem="dH0-hH-Vaa" secondAttribute="width" id="z1Q-ol-pG5"/>
+                                    <constraint firstItem="lTh-G5-L3G" firstAttribute="width" secondItem="dH0-hH-Vaa" secondAttribute="width" id="zOW-Q4-zmI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20000000000000001" green="0.21176470589999999" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Yy0-Xa-ILc" secondAttribute="bottom" constant="16" id="ISy-7t-2iX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mMz-E6-hTU" secondAttribute="trailing" constant="40" id="KBz-f5-GpF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="n4w-x2-Qg2" secondAttribute="trailing" constant="16" id="KaV-7P-Uml"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yy0-Xa-ILc" secondAttribute="trailing" constant="16" id="Vc9-e1-IX7"/>
+                            <constraint firstItem="n4w-x2-Qg2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="d8C-LW-JRA"/>
+                            <constraint firstItem="mMz-E6-hTU" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="gwb-Nz-f6b"/>
+                            <constraint firstItem="mMz-E6-hTU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="i0k-LZ-o5B"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="buzzButton" destination="lTh-G5-L3G" id="5He-43-dML"/>
+                        <outlet property="fizzButton" destination="K2T-9Y-vgQ" id="fXd-5M-tff"/>
+                        <outlet property="fizzBuzzButton" destination="K2P-rr-Ikn" id="XIT-T6-eI4"/>
+                        <outlet property="numberButton" destination="dH0-hH-Vaa" id="EJ6-h1-9qb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="31.934032983508249"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="button_border" width="400" height="400"/>
+        <image name="champagne" width="49" height="50"/>
+        <image name="lightning" width="29" height="50"/>
+        <image name="space" width="47" height="50"/>
+    </resources>
 </document>
